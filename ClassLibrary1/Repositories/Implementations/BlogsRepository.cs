@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Microsoft.EntityFrameworkCore;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,22 +8,22 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Repositories.Implementations
 {
-    public class UsersRepository : IUsersRepository
+    public class BlogsRepository : IBlogsRepository
     {
         private readonly PritulokDBContext _dBContext;
 
-        public UsersRepository(PritulokDBContext dbContext)
+        public BlogsRepository(PritulokDBContext dbContext)
         {
             _dBContext = dbContext;
         }
 
-        public List<User> GetUsers()
+        public List<Blog> GetBlogs()
         {
-            return _dBContext.Users.ToList();
+            return _dBContext.Blogs.ToList();
         }
-        public void AddUser(User newUser)
+        public void AddBlog(Blog newBlog)
         {
-            _dBContext.Users.Add(newUser);
+            _dBContext.Blogs.Add(newBlog);
             _dBContext.SaveChanges();
         }
     }

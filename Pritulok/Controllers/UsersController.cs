@@ -20,5 +20,10 @@ namespace Pritulok.Controllers
         {
             return _usersService.GetUsers().ToArray();
         }
+        [HttpPost]
+        public void AddUser(User newUser)
+        {
+            _usersService.AddUser(newUser);
+        }
     }
 }

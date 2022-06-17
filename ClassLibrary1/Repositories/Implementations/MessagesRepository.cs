@@ -7,22 +7,22 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Repositories.Implementations
 {
-    public class UsersRepository : IUsersRepository
+    public class MessagesRepository : IMessagesRepository
     {
         private readonly PritulokDBContext _dBContext;
 
-        public UsersRepository(PritulokDBContext dbContext)
+        public MessagesRepository(PritulokDBContext dbContext)
         {
             _dBContext = dbContext;
         }
 
-        public List<User> GetUsers()
+        public List<Messages> GetMessages()
         {
-            return _dBContext.Users.ToList();
+            return _dBContext.Messages.ToList();
         }
-        public void AddUser(User newUser)
+        public void AddMessage(Messages newMessage)
         {
-            _dBContext.Users.Add(newUser);
+            _dBContext.Messages.Add(newMessage);
             _dBContext.SaveChanges();
         }
     }

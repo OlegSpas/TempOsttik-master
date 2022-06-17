@@ -21,5 +21,9 @@ namespace Infrastructure.Services.Implementations
         {
             return _usersRepository.GetUsers();
         }
+        public void AddUser(User newUser)
+        {
+            _usersRepository.AddUser(newUser);
+        }
     }
 }

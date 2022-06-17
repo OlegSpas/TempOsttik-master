@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Services
 {
-    public interface IUsersService
+    public interface IBlogsService
     {
-        public List<User> GetUsers();
-        public void AddUser(User newUser);
+        public List<Blog> GetBlogs();
+        public void AddBlog(Blog newBlog);
     }
 }

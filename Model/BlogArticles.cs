@@ -8,11 +8,12 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public class PetImage
+    public class BlogArticles
     {
         public int Id { get; set; }
-        public string Url { get; set; }
-      
+        public string SubTitle { get; set; }
+        public string Paragraph { get; set; }
+
 
     }
 }

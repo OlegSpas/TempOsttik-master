@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Repositories
 {
-    public interface IUsersRepository
+    public interface IBlogsRepository
     {
-        public List<User> GetUsers();
-        public void AddUser(User newUser);
+        public List<Blog> GetBlogs();
+        public void AddBlog(Blog newBlog);
     }
 }

@@ -20,7 +20,8 @@ namespace Infrastructure
         public virtual DbSet<User> Users { get; set; } = null!;
         public virtual DbSet<Pet> Pets { get; set; } = null!;
         public virtual DbSet<PetImage> PetImages { get; set; } = null!;
-
+        public virtual DbSet<Messages> Messages { get; set; } = null!;
+        public virtual DbSet<Blog> Blogs { get; set; } = null!;
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -35,15 +36,36 @@ namespace Infrastructure
             modelBuilder.Entity<User>(entity =>
             {
                 entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
+                    .ValueGeneratedOnAdd()
                     .HasColumnName("id");
             });
             modelBuilder.Entity<Pet>(entity =>
             {
                 entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
+                   .ValueGeneratedOnAdd()
                     .HasColumnName("id");
             
+            });
+            modelBuilder.Entity<PetImage>(entity =>
+            {
+                entity.Property(e => e.Id)
+                    .ValueGeneratedOnAdd()
+                    .HasColumnName("id");
+
+            });
+            modelBuilder.Entity<Messages>(entity =>
+            {
+                entity.Property(e => e.Id)
+                    .ValueGeneratedOnAdd()
+                    .HasColumnName("id");
+
+            });
+            modelBuilder.Entity<Blog>(entity =>
+            {
+                entity.Property(e => e.Id)
+                    .ValueGeneratedOnAdd()
+                    .HasColumnName("id");
+
             });
 
             OnModelCreatingPartial(modelBuilder);

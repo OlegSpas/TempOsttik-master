@@ -31,6 +31,12 @@ namespace Pritulok
             services.AddDbContext<PritulokDBContext>();
             services.AddTransient<IUsersRepository, UsersRepository>();
             services.AddTransient<IUsersService, UsersService>();
+            services.AddTransient<IPetsRepository, PetsRepository>();
+            services.AddTransient<IPetsService, PetsService>();
+            services.AddTransient<IMessagesRepository, MessagesRepository>();
+            services.AddTransient<IMessagesService, MessagesService>();
+            services.AddTransient<IBlogsRepository, BlogsRepository>();
+            services.AddTransient<IBlogsService, BlogsService>();
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

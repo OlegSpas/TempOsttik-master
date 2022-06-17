@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Services
 {
-    public interface IUsersService
+    public interface IMessagesService
     {
-        public List<User> GetUsers();
-        public void AddUser(User newUser);
+        public List<Messages> GetMessages();
+        public void AddMessage(Messages newMessage);
     }
 }

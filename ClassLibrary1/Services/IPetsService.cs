@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Services
 {
-    public interface IUsersService
+    public interface IPetsService
     {
-        public List<User> GetUsers();
-        public void AddUser(User newUser);
+        public List<Pet> GetPets();
+        public void AddPet(Pet newPet);
     }
 }
